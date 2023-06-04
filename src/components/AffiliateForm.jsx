@@ -15,7 +15,6 @@ export const AffiliateForm = ({ handleResponse }) => {
 
 			handleResponse(response.data);
 		} catch (error) {
-			console.log(error)
 			handleResponse(error)
 		}
 	}
