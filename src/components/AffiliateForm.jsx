@@ -22,11 +22,10 @@ export const AffiliateForm = ({ handleResponse }) => {
 	return (
 		<div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
 			<div className="mx-auto max-w-lg text-center">
-				<h1 className="text-2xl font-bold sm:text-3xl">Get started today!</h1>
+				<h1 className="text-2xl font-bold sm:text-3xl">Buscar usuario por DNI</h1>
 
 				<p className="mt-4 text-gray-500">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla
-					eaque error neque ipsa culpa autem, at itaque nostrum!
+					Ingresar DNI para verificar la disponibilidad de beneficios.
 				</p>
 			</div>
 
@@ -36,14 +35,14 @@ export const AffiliateForm = ({ handleResponse }) => {
 
 					<div className="relative">
 						<input
-							type="number"
+							type="text"
 							name="dni"
-							className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+							className="w-full rounded-lg border-[1px] border-gray-100 p-4 pe-12 text-sm shadow-md"
 							placeholder="Ingresar DNI"
 						/>
 
 						<span className="absolute text-gray-300 inset-y-0 end-0 grid place-content-center px-4">
-							#
+							123
 						</span>
 					</div>
 				</div>
