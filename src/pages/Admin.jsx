@@ -1,14 +1,32 @@
+import { useEffect, useState } from "react"
 import { ButtonIcon } from "../components/ButtonIcon"
 import { CreateForm } from "../components/CreateForm"
 import { FormModal } from "../components/FormModal"
+import { ItemTable } from "../components/ItemTable"
 import { useModalForm } from "../hooks/useModalForm"
 
+import api from "../../api"
+import axios from "axios"
+import { getHeaderToken } from "../../helpers/getHeaderAuth"
+
 export const AdminPanel = () => {
+
+	const [userList, setUserList] = useState([])
 	const {
 		showModal: showCreate,
 		showModalForm: showCreateModal,
 		closeModal: closeCreate,
 	} = useModalForm();
+
+	useEffect(() => {
+
+		axios.get(`${api}/affiliate`, getHeaderToken())
+			.then(res => {
+				setUserList(res.data)
+			})
+			.catch(err => console.log(err));
+	}, [showCreate]);
+
 
 	const PlusIcon = () => (
 		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -18,8 +36,11 @@ export const AdminPanel = () => {
 
 	return (
 		<>
-			<ButtonIcon onClick={showCreateModal} title='Cargar nuevo' icon={<PlusIcon />} />
-			<FormModal open={showCreate} onClose={closeCreate} title='Nuevo usuario' form={<CreateForm closeCreate={closeCreate}/>}/>
+			<div className="flex items-center cursor-pointer p-8 h-28">
+				<ButtonIcon onClick={showCreateModal} title='Cargar nuevo' icon={<PlusIcon />} />
+			</div>
+			<ItemTable data={userList}/>
+			<FormModal open={showCreate} onClose={closeCreate} title='Nuevo usuario' form={<CreateForm closeCreate={closeCreate} />} />
 		</>
 	)
 }
