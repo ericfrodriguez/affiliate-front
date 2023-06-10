@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { CheckBenefits, SignIn } from "../pages";
+import { CheckBenefits, SignIn, AdminPanel } from "../pages";
 
 const router = createBrowserRouter([
 	{
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/admin",
-		element: <div>Cargar nuevo </div>,
+		element: <AdminPanel />
 	},
 ]);
 
