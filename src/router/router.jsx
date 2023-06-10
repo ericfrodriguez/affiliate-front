@@ -7,11 +7,11 @@ const router = createBrowserRouter([
 		element: <CheckBenefits />,
 	},
 	{
-		path: "auth/signin",
+		path: "/auth/signin",
 		element: <SignIn />,
 	},
 	{
-		path: "admin",
+		path: "/admin",
 		element: <div>Cargar nuevo </div>,
 	},
 ]);
