@@ -1,3 +1,4 @@
+import axios from "axios";
 
 export const CreateForm = ({ closeCreate }) => {
 
@@ -12,8 +13,9 @@ export const CreateForm = ({ closeCreate }) => {
 			console.log(formData);
 			closeCreate();
 
-			// const response = await axios.post(`${api}/user/authenticate`, formData);
+			const response = await axios.post(`${api}/affiliate`, formData);
 
+			console.log(response);
 			// setTimeout(() => {
 			// 	navigate('/admin');
 			// }, 1000);
