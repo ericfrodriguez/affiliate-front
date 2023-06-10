@@ -14,7 +14,14 @@ export const CreateForm = ({ closeCreate }) => {
 			console.log(formData);
 			closeCreate();
 
-			const response = await axios.post(`${api}/affiliate`, formData);
+			const token = localStorage.setItem('token', response.data.token);
+			const options = {
+				headers: {
+					Authorization: `Bearer ${token}`
+				}
+			}
+
+			const response = await axios.post(`${api}/affiliate`, formData, options);
 
 			console.log(response);
 			// setTimeout(() => {
