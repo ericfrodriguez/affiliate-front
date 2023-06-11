@@ -8,14 +8,21 @@ import { useModalForm } from "../hooks/useModalForm"
 import api from "../../api"
 import axios from "axios"
 import { getHeaderToken } from "../../helpers/getHeaderAuth"
+import { UpdateForm } from "../components/UpdateForm"
+import { useSelector } from "react-redux"
 
 export const AdminPanel = () => {
-
 	const [userList, setUserList] = useState([])
 	const {
 		showModal: showCreate,
 		showModalForm: showCreateModal,
 		closeModal: closeCreate,
+	} = useModalForm();
+
+	const {
+		showModal: showUpdate,
+		showModalForm: showUpdateModal,
+		closeModal: closeUpdate,
 	} = useModalForm();
 
 	useEffect(() => {
@@ -25,7 +32,7 @@ export const AdminPanel = () => {
 				setUserList(res.data)
 			})
 			.catch(err => console.log(err));
-	}, [showCreate]);
+	}, [showCreate, showUpdate]);
 
 
 	const PlusIcon = () => (
@@ -39,8 +46,9 @@ export const AdminPanel = () => {
 			<div className="flex items-center cursor-pointer p-8 h-28">
 				<ButtonTextIcon onClick={showCreateModal} title='Cargar nuevo' icon={<PlusIcon />} />
 			</div>
-			<ItemTable data={userList}/>
+			<ItemTable showUpdateModal={showUpdateModal} data={userList}/>
 			<FormModal open={showCreate} onClose={closeCreate} title='Nuevo usuario' form={<CreateForm closeCreate={closeCreate} />} />
+			<FormModal open={showUpdate} onClose={closeUpdate} title='Editar usuario' form={<UpdateForm closeUpdate={closeUpdate} />} />
 		</>
 	)
 }

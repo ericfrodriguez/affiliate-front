@@ -1,11 +1,15 @@
 import axios from "axios"
 import { getHeaderToken } from "../../helpers/getHeaderAuth"
 import api from "../../api"
+import { useDispatch } from "react-redux"
+import { getAffiliateById } from "../store/affiliate/actions"
 
-export const ItemTable = ({ data }) => {
+export const ItemTable = ({ data, showUpdateModal}) => {
+	const dispatch = useDispatch();
 
 const handleEdit = async (dni) => {
-	console.log(dni)
+	await dispatch(getAffiliateById(dni));
+	showUpdateModal();
 }
 
 const handleDelete = async (dni) => {

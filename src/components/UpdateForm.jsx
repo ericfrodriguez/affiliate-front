@@ -1,7 +1,10 @@
 import axios from "axios";
 import api from "../../api";
+import { useSelector } from "react-redux";
 
-export const CreateForm = ({ closeCreate }) => {
+export const UpdateForm = ({ closeUpdate }) => {
+	const { affiliate } = useSelector(store => store.affiliateReducer);
+	console.log('Affiliate id: ', affiliate.id);
 
 	const handleSubmit = async (event) => {
 		try {
@@ -10,6 +13,7 @@ export const CreateForm = ({ closeCreate }) => {
 			const formData = Object.fromEntries(
 				new FormData(event.target)
 			);
+			formData.id = affiliate.id;
 
 			const token = localStorage.getItem('token');
 			const options = {
@@ -18,13 +22,9 @@ export const CreateForm = ({ closeCreate }) => {
 				}
 			}
 
-			const response = await axios.post(`${api}/affiliate`, formData, options);
+			const response = await axios.put(`${api}/affiliate/${affiliate.id}`, formData, options);
 
-			console.log(response);
-			closeCreate();
-			// setTimeout(() => {
-			// 	navigate('/admin');
-			// }, 1000);
+			closeUpdate();
 		} catch (error) {
 			console.log(error)
 			// showAlertMessage('Error', 'Usuario y/o contraseña incorrectos');
@@ -43,6 +43,7 @@ export const CreateForm = ({ closeCreate }) => {
 							name="name"
 							className="w-full rounded-lg border-[1px] border-gray-200 p-4 pe-12 text-sm shadow-sm"
 							placeholder="Nombre"
+							defaultValue={affiliate.name}
 						/>
 					</div>
 				</div>
@@ -55,6 +56,7 @@ export const CreateForm = ({ closeCreate }) => {
 							name="surname"
 							className="w-full rounded-lg border-[1px] border-gray-200 p-4 pe-12 text-sm shadow-sm"
 							placeholder="Apellido"
+							defaultValue={affiliate.surname}
 						/>
 					</div>
 				</div>
@@ -67,6 +69,7 @@ export const CreateForm = ({ closeCreate }) => {
 							name="email"
 							className="w-full rounded-lg border-[1px] border-gray-200 p-4 pe-12 text-sm shadow-sm"
 							placeholder="Email"
+							defaultValue={affiliate.email}
 						/>
 					</div>
 				</div>
@@ -79,6 +82,7 @@ export const CreateForm = ({ closeCreate }) => {
 							name="dni"
 							className="w-full rounded-lg border-[1px] border-gray-200 p-4 pe-12 text-sm shadow-sm"
 							placeholder="DNI"
+							defaultValue={affiliate.dni}
 						/>
 					</div>
 				</div>
@@ -91,6 +95,7 @@ export const CreateForm = ({ closeCreate }) => {
 							name="lu"
 							className="w-full rounded-lg border-[1px] border-gray-200 p-4 pe-12 text-sm shadow-sm"
 							placeholder="LU"
+							defaultValue={affiliate.lu}
 						/>
 					</div>
 				</div>
@@ -103,6 +108,7 @@ export const CreateForm = ({ closeCreate }) => {
 							name="phoneNumber"
 							className="w-full rounded-lg border-[1px] border-gray-200 p-4 pe-12 text-sm shadow-sm"
 							placeholder="Tel."
+							defaultValue={affiliate.phoneNumber}
 						/>
 					</div>
 				</div>
