@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ButtonIcon } from "../components/ButtonIcon"
+import { ButtonTextIcon } from "../components/ButtonTextIcon"
 import { CreateForm } from "../components/CreateForm"
 import { FormModal } from "../components/FormModal"
 import { ItemTable } from "../components/ItemTable"
@@ -37,7 +37,7 @@ export const AdminPanel = () => {
 	return (
 		<>
 			<div className="flex items-center cursor-pointer p-8 h-28">
-				<ButtonIcon onClick={showCreateModal} title='Cargar nuevo' icon={<PlusIcon />} />
+				<ButtonTextIcon onClick={showCreateModal} title='Cargar nuevo' icon={<PlusIcon />} />
 			</div>
 			<ItemTable data={userList}/>
 			<FormModal open={showCreate} onClose={closeCreate} title='Nuevo usuario' form={<CreateForm closeCreate={closeCreate} />} />

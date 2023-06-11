@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom"
 
-export const ButtonIcon = ({ title, icon, onClick}) => {
+export const ButtonIcon = ({icon, to}) => {
 	return (
-		<a
-			className="inline-flex items-center gap-2 rounded border border-indigo-600 bg-indigo-600 px-8 py-3 text-white hover:bg-transparent ease-in-out duration-200 hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-			onClick={onClick}
-		>
-			<span className="text-sm font-medium"> {title} </span>
-
-			{icon}
-		</a>
+		<>
+			<Link
+				className="inline-block rounded-full border border-indigo-600 p-3 text-indigo-600 hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
+				to={to}
+			>
+				{
+					icon
+				}
+			</Link>
+		</>
 	)
 }
