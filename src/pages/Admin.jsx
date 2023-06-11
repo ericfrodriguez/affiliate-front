@@ -9,10 +9,9 @@ import api from "../../api"
 import axios from "axios"
 import { getHeaderToken } from "../../helpers/getHeaderAuth"
 import { UpdateForm } from "../components/UpdateForm"
-import { useSelector } from "react-redux"
 
 export const AdminPanel = () => {
-	const [userList, setUserList] = useState([])
+	const [userList, setUserList] = useState(null)
 	const {
 		showModal: showCreate,
 		showModalForm: showCreateModal,
@@ -46,7 +45,15 @@ export const AdminPanel = () => {
 			<div className="flex items-center cursor-pointer p-8 h-28">
 				<ButtonTextIcon onClick={showCreateModal} title='Cargar nuevo' icon={<PlusIcon />} />
 			</div>
-			<ItemTable showUpdateModal={showUpdateModal} data={userList}/>
+			{
+				userList
+				? <ItemTable showUpdateModal={showUpdateModal} data={userList}/>
+				: (
+					<div className="w-full flex justify-center">
+						<p className="text-2xl">Cargando...</p>
+					</div>
+				)
+			}
 			<FormModal open={showCreate} onClose={closeCreate} title='Nuevo usuario' form={<CreateForm closeCreate={closeCreate} />} />
 			<FormModal open={showUpdate} onClose={closeUpdate} title='Editar usuario' form={<UpdateForm closeUpdate={closeUpdate} />} />
 		</>

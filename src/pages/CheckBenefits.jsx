@@ -2,7 +2,6 @@ import { useState } from "react"
 import { AffiliateForm } from "../components/AffiliateForm"
 import { AffiliateMessage } from "../components/AffiliateMessage"
 import { ButtonIcon } from "../components/ButtonIcon"
-import { Link } from "react-router-dom"
 
 
 

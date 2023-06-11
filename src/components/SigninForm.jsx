@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react"
 import api from "../../api";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const SigninForm = ({ showAlertMessage }) => {
 	const [viewPassword, setViewPassword] = useState(true);
@@ -25,9 +25,10 @@ export const SigninForm = ({ showAlertMessage }) => {
 			const response = await axios.post(`${api}/user/authenticate`, formData);
 
 			localStorage.setItem('token', response.data.token);
+			showAlertMessage('Logueado con exito', 'Redireccionando al panel de administrador');
 			setTimeout(() => {
 				navigate('/admin');
-			}, 1000);
+			}, 1500);
 		} catch (error) {
 			console.log(error)
 			showAlertMessage('Error', 'Usuario y/o contraseña incorrectos');

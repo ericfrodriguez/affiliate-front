@@ -22,9 +22,6 @@ export const CreateForm = ({ closeCreate }) => {
 
 			console.log(response);
 			closeCreate();
-			// setTimeout(() => {
-			// 	navigate('/admin');
-			// }, 1000);
 		} catch (error) {
 			console.log(error)
 			// showAlertMessage('Error', 'Usuario y/o contraseña incorrectos');
