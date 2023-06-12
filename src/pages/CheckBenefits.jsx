@@ -29,13 +29,13 @@ export const CheckBenefits = () => {
 	}
 
 	return (
-		<>
+		<div className="bg-sky-300 h-screen">
 
 			<div className="flex items-center justify-end cursor-pointer p-8 h-28">
 					<ButtonIcon to='/auth/signin' icon={<LockIcon />} />
 			</div>
 			<AffiliateForm handleResponse={handleResponse} />
 			{showMessage && <AffiliateMessage user={user} success={success} />}
-		</>
+		</div>
 	)
 }

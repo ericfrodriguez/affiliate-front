@@ -23,7 +23,7 @@ export const CreateForm = ({ closeCreate }) => {
 			console.log(response);
 			closeCreate();
 		} catch (error) {
-			console.log(error)
+			console.log(error.message)
 			// showAlertMessage('Error', 'Usuario y/o contraseña incorrectos');
 		}
 	}
