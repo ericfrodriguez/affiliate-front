@@ -108,7 +108,7 @@ export const CreateForm = ({ closeCreate }) => {
 
 					<button
 						type="submit"
-						className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+						className="inline-block rounded-lg bg-sky-950 px-5 py-3 text-sm font-medium text-white"
 					>
 						Enviar
 					</button>

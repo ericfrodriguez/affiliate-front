@@ -39,9 +39,9 @@ export const SigninForm = ({ showAlertMessage }) => {
 
 		<div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
 			<div className="mx-auto max-w-lg text-center">
-				<h1 className="text-2xl font-bold sm:text-3xl">Bienvenido</h1>
+				<h1 className="text-2xl text-sky-950 font-bold sm:text-3xl">Bienvenido</h1>
 
-				<p className="mt-4 text-gray-500">
+				<p className="mt-4 font-bold text-sky-950">
 					Ingresar como administrador
 				</p>
 			</div>
@@ -99,7 +99,7 @@ export const SigninForm = ({ showAlertMessage }) => {
 
 					<button
 						type="submit"
-						className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+						className="inline-block rounded-lg bg-sky-950 px-5 py-3 text-sm font-medium text-white"
 					>
 						Ingresar
 					</button>

@@ -34,7 +34,7 @@ const handleDelete = async (dni) => {
 			<td className="whitespace-nowrap px-1 py-2">
 				<a
 					href="#"
-					className="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
+					className="inline-block rounded bg-sky-950 px-4 py-2 text-xs font-medium text-white hover:bg-sky-950"
 					onClick={() => handleEdit(dni)}
 				>
 					Editar
