@@ -24,13 +24,13 @@ const handleDelete = async (dni) => {
 
 	const ItemRow = ({ name, surname, dni, lu, phoneNumber, email }) => (
 		<tr>
-			<td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+			<td className="whitespace-nowrap text-center px-4 py-2 font-medium text-gray-900">
 				{`${name} ${surname}`}
 			</td>
-			<td className="whitespace-nowrap px-4 py-2 text-gray-700">{dni}</td>
-			<td className="whitespace-nowrap px-4 py-2 text-gray-700">{lu}</td>
-			<td className="whitespace-nowrap px-4 py-2 text-gray-700">{email}</td>
-			<td className="whitespace-nowrap px-4 py-2 text-gray-700">{phoneNumber}</td>
+			<td className="whitespace-nowrap px-4 py-2 text-gray-700 text-center">{dni}</td>
+			<td className="whitespace-nowrap px-4 py-2 text-gray-700 text-center">{lu}</td>
+			<td className="whitespace-nowrap px-4 py-2 text-gray-700 text-center">{email}</td>
+			<td className="whitespace-nowrap px-4 py-2 text-gray-700 text-center">{phoneNumber}</td>
 			<td className="whitespace-nowrap px-1 py-2">
 				<a
 					href="#"
@@ -56,23 +56,24 @@ const handleDelete = async (dni) => {
 
 		<div className="overflow-x-auto">
 			<table className="min-w-[90%] mx-auto divide-y-2 divide-gray-200 bg-white text-sm">
-				<thead className="ltr:text-left rtl:text-right">
+				<thead className="bg-sky-950 text-white ltr:text-left rtl:text-right">
 					<tr>
-						<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+						<th className="whitespace-nowrap px-4 py-2 font-medium">
 							Nombre y apellido
 						</th>
-						<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+						<th className="whitespace-nowrap px-4 py-2 font-medium">
 							DNI
 						</th>
-						<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+						<th className="whitespace-nowrap px-4 py-2 font-medium">
 							LU
 						</th>
-						<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+						<th className="whitespace-nowrap px-4 py-2 font-medium">
 							Email
 						</th>
-						<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+						<th className="whitespace-nowrap px-4 py-2 font-medium">
 							Tel
 						</th>
+						<th className="px-4 py-2"></th>
 						<th className="px-4 py-2"></th>
 					</tr>
 				</thead>
