@@ -23,15 +23,15 @@ export const CarouselBenefits = () => {
 
 	return (
 		<Swiper
-			spaceBetween={50} q
+			spaceBetween={50}
 			slidesPerView={1}
 			pagination={true}
 			navigation={true}
 			centeredSlides={true}
 			modules={[Pagination, Autoplay, Navigation]}
 			autoplay={{
-				delay: 2000,
-				disableOnInteraction: false,
+				delay: 4000,
+				disableOnInteraction: true,
 			}}
 			className="w-11/12 h-full sm:w-6/12 p-8"
 		>
