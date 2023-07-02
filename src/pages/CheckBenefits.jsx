@@ -2,7 +2,7 @@ import { useState } from "react"
 import { AffiliateForm } from "../components/AffiliateForm"
 import { AffiliateMessage } from "../components/AffiliateMessage"
 import { ButtonIcon } from "../components/ButtonIcon"
-
+import { CarouselBenefits } from "../components/CarouselBenefits"
 
 
 export const CheckBenefits = () => {
@@ -29,13 +29,19 @@ export const CheckBenefits = () => {
 	}
 
 	return (
-		<div className="bg-sky-300 h-screen">
+		<div className="bg-sky-300 min-h-screen">
 
 			<div className="flex items-center justify-end cursor-pointer p-8 h-28">
-					<ButtonIcon to='/auth/signin' icon={<LockIcon />} />
+				<ButtonIcon to='/auth/signin' icon={<LockIcon />} />
 			</div>
 			<AffiliateForm handleResponse={handleResponse} />
 			{showMessage && <AffiliateMessage user={user} success={success} />}
+			<section className="flex flex-col items-center mt-12 pb-12">
+				<h2 className="text-2xl text-sky-950 font-bold sm:text-3xl">Beneficios</h2>
+				<div className="w-full h-[300px] max-w-[1600px] mx-auto py-4">
+					<CarouselBenefits />
+				</div>
+			</section>
 		</div>
 	)
 }
