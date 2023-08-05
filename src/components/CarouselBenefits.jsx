@@ -17,8 +17,9 @@ const Slide = ({ image }) => (
 export const CarouselBenefits = () => {
 	const images = [
 		'renovatium.jpg',
-		'renovatium.jpg',
-		'renovatium.jpg',
+		'lowprints.jpeg',
+		'bramat.jpeg',
+		'jaiteva.png'
 	]
 
 	return (
@@ -33,7 +34,7 @@ export const CarouselBenefits = () => {
 				delay: 4000,
 				disableOnInteraction: true,
 			}}
-			className="w-11/12 h-full sm:w-6/12 p-8"
+			className="w-11/12 h-full sm:max-w-[300px] p-8"
 		>
 			{
 				images.map((image, index) => (
